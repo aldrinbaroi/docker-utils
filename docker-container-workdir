@@ -1,0 +1,7 @@
+#!/bin/bash
+
+readonly CONT_ID=${1}
+
+docker container inspect ${CONT_ID} | jq -r '.[0].Config.Labels."com.docker.compose.project.working_dir"'
+
+#::END::
